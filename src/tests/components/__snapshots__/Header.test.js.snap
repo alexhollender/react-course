@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Header component 1`] = `
+<header>
+  <h1>
+    Expensify
+  </h1>
+  <[object Object]
+    exact={true}
+    to="/"
+  >
+    Home
+  </[object Object]>
+  <[object Object]
+    to="/add"
+  >
+    Add expense
+  </[object Object]>
+  <[object Object]
+    to="/help"
+  >
+    Help
+  </[object Object]>
+</header>
+`;

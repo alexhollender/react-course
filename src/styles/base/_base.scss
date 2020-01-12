@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%
+}
+
+body {
+  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Lato','Helvetica','Arial',sans-serif;
+  font-size: 1.6rem;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.active {
+  font-weight: bold;
+}
