@@ -3,11 +3,11 @@
 exports[`render ExpenseListItem with an expense 1`] = `
 <div>
   <h3>
-    <[object Object]
+    <Link
       to="/edit/0"
     >
       Gum
-    </[object Object]>
+    </Link>
   </h3>
   <p>
     amount: 

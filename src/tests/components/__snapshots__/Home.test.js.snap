@@ -2,7 +2,7 @@
 
 exports[`render Home component 1`] = `
 <div>
-  <[object Object] />
-  <[object Object] />
+  <Connect(ExpenseListFilters) />
+  <Connect(ExpenseList) />
 </div>
 `;

@@ -5,21 +5,21 @@ exports[`render Header component 1`] = `
   <h1>
     Expensify
   </h1>
-  <[object Object]
+  <NavLink
     exact={true}
     to="/"
   >
     Home
-  </[object Object]>
-  <[object Object]
+  </NavLink>
+  <NavLink
     to="/add"
   >
     Add expense
-  </[object Object]>
-  <[object Object]
+  </NavLink>
+  <NavLink
     to="/help"
   >
     Help
-  </[object Object]>
+  </NavLink>
 </header>
 `;
