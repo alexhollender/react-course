@@ -1,8 +1,10 @@
 // webpack.config.js file
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
+  const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' });
 
   return {
     entry: './src/app.js',
@@ -17,17 +19,29 @@ module.exports = (env) => {
         test: /\.js$/,
         exclude: /node_modules/
       }, {
-        // this tells webpack to process all SCSS into CSS
-        test: /\.s?css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+       test: /\.s?css$/,
+       use: [
+           MiniCssExtractPlugin.loader,
+           {
+               loader: 'css-loader',
+               options: {
+                   sourceMap: true
+               }
+           },
+           {
+               loader: 'sass-loader',
+               options: {
+                   sourceMap: true
+               }
+           }
+       ]
       }]
     },
+    plugins: [
+      CSSExtract
+    ],
     // this helps with debugging bundle.js
-    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true
