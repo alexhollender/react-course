@@ -4,5 +4,6 @@ exports[`render Home component 1`] = `
 <div>
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
+  <Connect(ExpensesSummary) />
 </div>
 `;
