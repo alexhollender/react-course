@@ -1,30 +1,32 @@
 import * as firebase from 'firebase';
 
 const config = {
-  apiKey: "AIzaSyCL5JYajrqh1lVPnm3k_ff4fL_aFAQ8zZs",
-  authDomain: "expensify-react-939cf.firebaseapp.com",
-  databaseURL: "https://expensify-react-939cf.firebaseio.com",
-  projectId: "expensify-react-939cf",
-  storageBucket: "expensify-react-939cf.appspot.com",
-  messagingSenderId: "182952633787",
-  appId: "1:182952633787:web:d61db9465d170f66c6d09e"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref('expenses')
-  .on('value', (snapshot) => {
-    const expenses = [];
-    snapshot.forEach((childSnapshot) => {
-      expenses.push({
-        id: childSnapshot.key,
-        ...childSnapshot.val()
-      });
-    });
-    console.log(expenses);
-  });
+export { firebase, database as default };
+
+// database.ref('expenses')
+//   .on('value', (snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+//     console.log(expenses);
+//   });
 
 //child removed
 // database.ref('expenses').on('child_removed', (snapshot) => {
@@ -37,16 +39,16 @@ database.ref('expenses')
 // });
 
 // child added
-database.ref('expenses').on('child_added', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
-
-setTimeout(() => {
-  database.ref('expenses').push({
-    title: 'Second note',
-    body: 'more note text'
-  });
-}, 7000);
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+//
+// setTimeout(() => {
+//   database.ref('expenses').push({
+//     title: 'Second note',
+//     body: 'more note text'
+//   });
+// }, 7000);
 
 // database.ref().on('value', (snapshot) => {
 //   const data = snapshot.val();

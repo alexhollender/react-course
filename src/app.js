@@ -5,32 +5,12 @@ import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
 import { updateFilterText, sortByAmount, sortByDate } from './actions/filters';
-// import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
 
 const store = configureStore();
-
-store.dispatch(addExpense({
-  description: 'First bill (water)',
-  amount: 20002,
-  createdAt: -99823
-}));
-
-store.dispatch(addExpense({
-  description: 'Second bill',
-  amount: 10000,
-  createdAt: 2312
-}));
-
-store.dispatch(addExpense({
-  description: 'Third bill (water)',
-  amount: 500,
-  createdAt: 1000
-}));
-
 
 const jsx = (
   <Provider store={store}>
