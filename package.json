@@ -2,7 +2,8 @@
   "name": "expensify",
   "version": "1.0.0",
   "engines": {
-    "node": "12.6.0"
+    "node": "12.6.0",
+    "yarn": "1.19.2"
   },
   "main": "index.js",
   "author": "Alex Hollender",
