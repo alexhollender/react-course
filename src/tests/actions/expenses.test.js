@@ -1,10 +1,18 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { startAddExpense, addExpense, editExpense, removeExpense } from '../../actions/expenses';
+import { startAddExpense, addExpense, editExpense, removeExpense, setExpenses, startSetExpenses } from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
 const createMockStore = configureMockStore([thunk]);
+
+beforeEach((done) => {
+  const expensesData = {};
+  expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    expensesData[id] = { description, note, amount, createdAt };
+  });
+  database.ref('expenses').set(expensesData).then(() => done());
+});
 
 // Add expense test
 test('setup add expense action object with values', () => {
@@ -41,6 +49,28 @@ const store = createMockStore({});
   });
 });
 
+// Edit expense test
+test('setup test expense action object', () => {
+  const action = editExpense('123abc', { note: 'New note' });
+  expect(action).toEqual({
+    type: 'EDIT_EXPENSE',
+    id: '123abc',
+    updates: {
+      note: 'New note'
+    }
+  });
+});
+
+// Remove expense test
+test('setup remove expense action object', () => {
+  const action = removeExpense('123abc');
+  expect(action).toEqual({
+    type: 'REMOVE_EXPENSE',
+    id: '123abc'
+  });
+});
+
+// add expense to Firebase and Redux store
 test('should add expense to database and store', (done) => {
   const store = createMockStore({});
   const expenseData = {
@@ -67,23 +97,24 @@ test('should add expense to database and store', (done) => {
   });
 });
 
-// Edit expense test
-test('setup test expense action object', () => {
-  const action = editExpense('123abc', { note: 'New note' });
+//
+test('should setup set expense action with object data', () => {
+  const action = setExpenses(expenses);
   expect(action).toEqual({
-    type: 'EDIT_EXPENSE',
-    id: '123abc',
-    updates: {
-      note: 'New note'
-    }
+    type: 'SET_EXPENSES',
+    expenses
   });
 });
 
-// Remove expense test
-test('setup remove expense action object', () => {
-  const action = removeExpense('123abc');
-  expect(action).toEqual({
-    type: 'REMOVE_EXPENSE',
-    id: '123abc'
+//
+test('should fetch the expenses from firebase', (done) => {
+  const store = createMockStore({});
+  store.dispatch(startSetExpenses()).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'SET_EXPENSES',
+      expenses
+    });
+    done();
   });
 });
