@@ -22,9 +22,9 @@ export class ExpenseListFilters extends React.Component {
   };
   render() {
     return (
-      <div>
-        <input type="text" value={this.props.filters.text} onChange={this.onTextChange} />
-        <select value={this.props.filters.sortBy} onChange={this.onSortChange}>
+      <div className="flex-container filter-group">
+        <input type="text" value={this.props.filters.text} onChange={this.onTextChange} placeholder="Search for expense..." className="textInput"/>
+        <select value={this.props.filters.sortBy} onChange={this.onSortChange} className="sortInput">
           <option value="date">Date</option>
           <option value="amount">Amount</option>
         </select>

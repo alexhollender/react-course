@@ -1,0 +1,15 @@
+.page-header {
+  margin-bottom: $m-size;
+  padding-bottom: $m-size;
+  border-bottom: 1px dashed $black;
+  overflow: auto;
+
+  h1 {
+    font-size: $heading;
+    margin: 11px 0;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

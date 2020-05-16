@@ -1,12 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => (
-  <header>
-    <h1>Expensify</h1>
-    <NavLink to="/" exact={true}>Home</NavLink>
-    <NavLink to="/add">Add expense</NavLink>
-    <NavLink to="/help">Help</NavLink>
+  <header className="flex-container">
+    <Link to="/" className="page-title"><h3>Expensify</h3></Link>
+    <NavLink to="/logout"><button className="text">Logout</button></NavLink>
   </header>
 );
 

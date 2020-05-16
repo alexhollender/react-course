@@ -118,7 +118,9 @@ exports[`check invalid amount on input change 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -243,7 +245,9 @@ exports[`render ExpenseForm correctly 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -368,7 +372,9 @@ exports[`render ExpenseForm with data 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -493,7 +499,9 @@ exports[`render error for invalid form submission 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -621,7 +629,9 @@ exports[`render error for invalid form submission 2`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -746,7 +756,9 @@ exports[`set amount on input change 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -871,7 +883,9 @@ exports[`set description on input change 1`] = `
       placeholder="Add a note for your expense (optional)"
       value=""
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>
@@ -996,7 +1010,9 @@ exports[`set note on textarea change 1`] = `
       placeholder="Add a note for your expense (optional)"
       value="New note"
     />
-    <button>
+    <button
+      className="primary"
+    >
       Save expense
     </button>
   </form>

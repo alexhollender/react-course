@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render ExpenseListFilters correctly 1`] = `
-<div>
+<div
+  className="flex-container filter-group"
+>
   <input
+    className="textInput"
     onChange={[Function]}
+    placeholder="Search for expense..."
     type="text"
     value=""
   />
   <select
+    className="sortInput"
     onChange={[Function]}
     value="date"
   >
@@ -129,13 +134,18 @@ exports[`render ExpenseListFilters correctly 1`] = `
 `;
 
 exports[`render ExpenseListFilters with alt data correctly 1`] = `
-<div>
+<div
+  className="flex-container filter-group"
+>
   <input
+    className="textInput"
     onChange={[Function]}
+    placeholder="Search for expense..."
     type="text"
     value="bills"
   />
   <select
+    className="sortInput"
     onChange={[Function]}
     value="amount"
   >

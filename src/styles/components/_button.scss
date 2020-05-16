@@ -1,0 +1,28 @@
+button {
+  padding: 8px;
+  transition: all 100ms ease-in;
+  border: $button-border;
+
+  &.primary {
+    background: $highlight;
+    &:hover {
+      background-color: darken($highlight, 10%);
+      box-shadow: 4px 5px 5px 0px;
+    }
+  }
+  &.outline {
+    background: none;
+    &:hover {
+      background-color: $highlight;
+    }
+  }
+  &.text {
+    @extend .outline;
+    border: none;
+    text-decoration: underline;
+
+    &:hover {
+      background-color: $highlight;
+    }
+  }
+}

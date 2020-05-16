@@ -18,6 +18,7 @@ exports[`should render EditExpensePage 1`] = `
     onSubmit={[Function]}
   />
   <button
+    className="outline"
     onClick={[Function]}
   >
     remove

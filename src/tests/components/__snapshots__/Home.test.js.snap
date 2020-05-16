@@ -2,8 +2,12 @@
 
 exports[`render Home component 1`] = `
 <div>
-  <Connect(ExpenseListFilters) />
-  <Connect(ExpenseList) />
   <Connect(ExpensesSummary) />
+  <div
+    className="page-container"
+  >
+    <Connect(ExpenseListFilters) />
+    <Connect(ExpenseList) />
+  </div>
 </div>
 `;

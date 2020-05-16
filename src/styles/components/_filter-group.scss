@@ -1,0 +1,12 @@
+.filter-group {
+  .textInput, .sortInput {
+    height: 46px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  input {
+    flex-grow: 1;
+  }
+}

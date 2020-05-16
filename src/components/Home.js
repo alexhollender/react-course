@@ -3,12 +3,14 @@ import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 import ExpensesSummary from './ExpensesSummary';
 
-const DashboardPage = () => (
+const Home = () => (
   <div>
-    <ExpenseListFilters />
-    <ExpenseList />
     <ExpensesSummary />
+    <div className="page-container">
+      <ExpenseListFilters />
+      <ExpenseList />
+    </div>
   </div>
 );
 
-export default DashboardPage;
+export default Home;
